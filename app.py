@@ -7,12 +7,12 @@ import PIL
 import pandas as pd
 
 ## Page Title
-st.set_page_config(page_title = "Food Classification")
-st.title("FOOD CLASSIFICATION")
-st.markdown("------")
-#st.set_page_config(page_title = "Calorie estimation")
-#st.title("FOOD RECOGNITION & CALORIE ESTIMATION")
+#st.set_page_config(page_title = "Food Classification")
+#st.title("FOOD CLASSIFICATION")
 #st.markdown("------")
+st.set_page_config(page_title = "Calorie estimation")
+st.title("FOOD RECOGNITION & CALORIE ESTIMATION")
+st.markdown("------")
 
 
 model_path="foodc.tflite"
@@ -109,8 +109,32 @@ def run_odt_and_draw_results(image_path, interpreter, threshold=0.3):
     #st.write(AreaofRectangle)
     # Find the class index of the current object
     class_id = int(obj['class_id'])
-    #n=39
-    st.write(classes[class_id])
+    n=278
+    m=152
+    o=163
+    p=39
+    q=150
+    r=197
+    st.info(classes[class_id])
+    
+    if class_id==0:
+        st.success("Estimated Calorie:",n)
+        st.markdown("__________________________")
+    elif class_id==1:
+        st.success("Estimated Calorie:",m)
+        st.markdown("__________________________")
+    elif class_id==2:
+        st.success("Estimated Calorie:",o)
+        st.markdown("__________________________")
+    elif class_id==3:
+        st.success("Estimated Calorie:",p)
+        st.markdown("__________________________")
+    elif class_id==4:
+        st.success("Estimated Calorie:",q)
+        st.markdown("__________________________")
+    elif class_id==5:
+        st.success("Estimated Calorie:",r)
+        st.markdown("__________________________")
     #st.write("Estimated Calorie:",n)
     #st.write(class_id)
     
